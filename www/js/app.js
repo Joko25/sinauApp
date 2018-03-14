@@ -22,21 +22,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
+.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}])
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl'
+    })
 
-  .state('app.search', {
-    url: '/search',
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+    })
+
+    .state('reg', {
+      url: '/reg',
+      templateUrl: 'templates/registrasi.html',
+      controller: 'RegCtrl'
+    })
+
+  .state('app.dash', {
+    url: '/dash',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/dashboard.html',
+        controller: 'DashCtrl'
       }
     }
   })
@@ -69,5 +88,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/login');
 });

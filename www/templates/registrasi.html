@@ -1,0 +1,30 @@
+<ion-view>
+<div class="bar bar-header bar-light">
+    <button class="button button-clear" ng-click="goBack()" >
+    <i class="icon ion-ios-arrow-back"></i>
+    Back</button>
+</div>
+  <ion-content class="padding" align='center'>
+      <div class="list list-inset" id="Absolute-Center">
+          <!-- <img ng-src="{{face}}" class="imglogo"> -->
+
+          <i class="icon ion-social-buffer-outline"></i>
+          
+          <hr/>
+          <label class="item item-input">
+              <input type="email" placeholder="contoh@email.com" ng-model="data.email" required>
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Full Name" ng-model="data.name" required>
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password" required>
+          </label>
+          <button class="button button-block button-outline button-positive" ng-click="regist()">Confirm</button>
+          <span id="loginFontforget">forget your login details? <strong><a href="#" ng-click="forget()">Get help login</a></strong></span>
+      </div>
+  </ion-content>
+  <!-- <div align="center" class="bar bar-footer bar-light">
+    <span class="title" id="loginFontfooter">Don't have an account? <strong><a href="#" ng-click="regist()">Signup</a></strong></span>
+  </div> -->
+</ion-view>

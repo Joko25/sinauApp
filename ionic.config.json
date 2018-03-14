@@ -1,5 +1,12 @@
 {
   "name": "sinauApp",
-  "app_id": "",
-  "type": "ionic1"
+  "app_id": "77896557",
+  "type": "ionic1",
+  "integrations": {
+    "cordova": {},
+    "gulp": {}
+  },
+  "watchPatterns": [
+    "scss/**/*"
+  ]
 }
